@@ -4,11 +4,11 @@ name: "CodeQL Advanced"
 on:
 
   pull_request:
-    branches: [ master ]
+    branches: [master]
     types: [opened, sychronize]
 jobs:
   codeql:
-    if: startsWith[github.head_ref,'B1'] 
+    if: startsWith[github.head_ref, 'B1'] 
     runs-on: ubuntu-latest
 
     steps:
