@@ -20,7 +20,9 @@ on:
 jobs:
   codeql:
     if: startWith[github.head_ref,'B1'] 
+
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
