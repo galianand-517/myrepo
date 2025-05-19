@@ -20,17 +20,9 @@ on:
 jobs:
   codeql:
     if: startWith[github.head_ref,'B1'] 
-      # required for all workflows
-      security-events: write
 
-      # required to fetch internal or private CodeQL packs
-      packages: read
+    runs-on: ubuntu-latest
 
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
-
-    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -50,5 +42,3 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-      with:
-        category: "/language:${{matrix.language}}"
